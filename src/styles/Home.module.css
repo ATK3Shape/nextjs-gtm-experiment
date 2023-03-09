@@ -1,8 +1,8 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  /* justify-content: space-between; */
+  /* align-items: center; */
   padding: 6rem;
   min-height: 100vh;
 }
@@ -16,6 +16,7 @@
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
+  margin-bottom: 60px;
 }
 
 .description a {
@@ -44,6 +45,7 @@
   grid-template-columns: repeat(4, minmax(25%, auto));
   width: var(--max-width);
   max-width: 100%;
+  column-gap: 30px;
 }
 
 .card {
@@ -149,6 +151,39 @@
     rgba(var(--tile-end-rgb), 1)
   );
   background-clip: content-box;
+}
+
+.productCard {
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0.3);
+}
+
+.productCard p {
+  margin-top: 1.3rem;
+}
+
+.productCard a {
+  color: #d62424;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+.productCard button {
+  background-color: #d93131;
+  margin-top: 1rem;
+  padding: 6px 12px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.back {
+  margin-bottom: 30px;
+}
+
+.back a {
+  color: #d62424;
 }
 
 /* Enable hover only on non-touch devices */
