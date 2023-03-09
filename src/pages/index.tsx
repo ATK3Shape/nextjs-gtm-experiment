@@ -3,11 +3,33 @@ import { useState } from 'react'
 // import Image from 'next/image'
 // import { Inter } from 'next/font/google'
 import styles from '../styles/Home.module.css'
+import Modal from 'react-modal';
 
 // const inter = Inter({ subsets: ['latin'] })
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    height: '70%',
+    width: '70%',
+  },
+};
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false)
+
+  const openModal = () => {
+    console.log('open')
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   return (
     <>
@@ -35,9 +57,20 @@ export default function Home() {
           <div className={styles.productCard}>
             <h2>Oak Wood - 77</h2>
             <p>Go for a refined look with handcrafted oak wood and natural aluminium.</p>
-            <button onClick={() => setIsOpen(true)}>Open window</button>
+            <button onClick={openModal}>Open window</button>
           </div>
         </div>
+
+        <Modal
+          isOpen={isOpen}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <button onClick={closeModal}>close</button>
+          <h2>Hello</h2>
+          <div>I am a modal</div>
+        </Modal>
       </main>
     </>
   )
