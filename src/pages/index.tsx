@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link';
 import { useState } from 'react'
 // import Image from 'next/image'
 // import { Inter } from 'next/font/google'
@@ -48,7 +49,7 @@ export default function Home() {
           <div className={styles.productCard}>
             <h2>Beosound A9</h2>
             <p>Don`&apos;`t mess with the classics. Unless it`&apos;`s to bring them bang up to date. Beosound A9 is now available with stereo pairing, smoother in-app setup, and improved Wi-Fi performance.</p>
-            <a href="/about">Read more</a>
+            <Link href="/about">Read more</Link>
           </div>
           <div className={styles.productCard}>
             <h2>BEOPLAY H95</h2>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
@@ -10,7 +11,9 @@ export default function About() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className={styles.main}>
-          <div className={styles.back}><a href="/">Go back</a></div>
+          <div className={styles.back}>
+          <Link href="/">Go back</Link>
+          </div>
           <div>
             <h2>Beosound A9</h2>
             <p>Beosound A9&apos;s iconic shape is designed to be displayed. From afar, it&apos;s a minimal masterpiece. Up close, the details shine. Just like your favourite furniture, it stands apart in any room. And if you prefer it on the wall, it rises to the occasion. Enjoy beauty from every angle, whether you press play or not.</p>
