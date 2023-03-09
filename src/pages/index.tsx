@@ -24,7 +24,6 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(false)
 
   const openModal = () => {
-    console.log('open')
     setIsOpen(true);
   }
 
