@@ -30,7 +30,7 @@ export default function Document() {
 
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         {/* Necessary to prevent error: window.gtag is not defined for Next.js-hydration */}
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
@@ -38,7 +38,7 @@ export default function Document() {
             gtag('js', new Date());
           `,
           }}
-        />
+        /> */}
       </body>
     </Html>
   )
