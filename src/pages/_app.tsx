@@ -1,12 +1,33 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Script from 'next/script'
+import { useRouter } from 'next/router'
 // import GoogleAnalytics from '../components/GoogleAnalytics'
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { locale } = useRouter();
+
   return (
     <>
       {/* <GoogleAnalytics /> */}
+      <Script
+        id="google-analytics-script"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              analytics_storage: 'denied',
+              wait_for_update: 1500,
+            });
+            gtag('set', 'ads_data_redaction', true);
+          `,
+        }}
+      />
+      <Script id="CookieConsent" src="https://policy.app.cookieinformation.com/uc.js" data-culture={locale} type="text/javascript" />
       <Script
         id="google-analytics-script"
         dangerouslySetInnerHTML={{
